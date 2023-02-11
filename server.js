@@ -25,6 +25,7 @@ const csp = require('express-csp-header');
 app.use(csp({
     policies: {
         'default-src': [csp.NONE],
+        'img-src': [csp.SELF],
     }
 }))
 
