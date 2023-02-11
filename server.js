@@ -21,6 +21,13 @@ const findUserMiddleware = (req, res, next) => {
   });
 };
 
+const csp = require('express-csp-header');
+app.use(csp({
+    policies: {
+        'default-src': [csp.NONE],
+    }
+}))
+
 //SETS UP EXPRESS APP MIDDLEWARE TO USE JSON+CORS+URL ENCODING AND SERVE STATIC FILES FROM BUILD FOLDER OF REACT APP
 app.use(cors());
 app.use(express.json());
