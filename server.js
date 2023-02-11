@@ -29,7 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, '/build')));
 
 //CONNECTS TO DATABASE WITH 'UserInfo' AS COLLECTION NAME FROM userDetails.js
 require('./userModels.js');
@@ -134,22 +134,6 @@ app.post('/userData', async (req, res) => {
   } catch (error) {}
 });
 
-
-//REFRESH USER BADGE
-app.post('/refreshuserbadge', findUserMiddleware, async  (req, res) => {
-  try {
-    const { userId, newBadge } = req.body;
-    const user = await User.findById(userId);
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-    user.badge = newBadge;
-    await user.save();
-    return res.status(200).json({ status: 'Badge updated successfully' });
-  } catch (error) {
-    return res.status(500).json({ error: 'Error updating badge' });
-  }
-});
 
 
 
