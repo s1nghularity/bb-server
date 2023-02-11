@@ -6,7 +6,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const path = require('path');
-const auth = require('./auth.js');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 5000;
@@ -215,7 +214,7 @@ app.put('/withdraw/:id', findUserMiddleware, (req, res) => {
 
 //SERVES BADBANK REACT APP WITH ABOVE MIDDLEWARE
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/public/index.html'));
+  res.sendFile(path.resolve(__dirname, '../client/build'));
 });
 
 app.listen(PORT, () => {

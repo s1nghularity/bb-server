@@ -4,7 +4,7 @@
   "description": "Backend API + Server",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js", 
     "proxy": "http://localhost:5000"
   },
   "author": "vikpsin",
