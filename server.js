@@ -29,7 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '/build')));
+app.use(express.static(path.join('https://bb-client-r4iq.onrender.com')));
 
 //CONNECTS TO DATABASE WITH 'UserInfo' AS COLLECTION NAME FROM userDetails.js
 require('./userModels.js');
@@ -200,7 +200,7 @@ app.put('/withdraw/:id', findUserMiddleware, (req, res) => {
 
 //SERVES BADBANK REACT APP WITH ABOVE MIDDLEWARE
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '/build'));
+  res.sendFile(path.resolve('https://bb-client-r4iq.onrender.com'));
 });
 
 app.listen(PORT, () => {
