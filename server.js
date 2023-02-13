@@ -126,7 +126,7 @@ app.post('/userData', async (req, res) => {
     const userEmail = user.email;
     User.findOne({ email: userEmail })
       .then((data) => {
-        res.send({ status: 'ok', data: data });
+        res.json.send({ status: 'ok', data: data });
       })
       .catch((error) => {
         res.send({ status: 'error', data: error });
