@@ -81,7 +81,7 @@ app.post('/register', async (req, res) => {
       });
     }
 
-    await User.create([{
+    const newUser = await User.create([{
       id,
       name,
       email,
@@ -89,7 +89,7 @@ app.post('/register', async (req, res) => {
       balance,
       transactionHistory: [],
     }]);
-    res.json.send({ status: 'User succesfully created!' });
+    res.json.send({ status: 'User succesfully created!', data: newUser });
   } catch (error) {
     res.send({ status: 'Error creating user.' });
   }
