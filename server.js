@@ -200,7 +200,7 @@ app.put('/withdraw/:id', findUserMiddleware, (req, res) => {
 
 //SERVES BADBANK REACT APP WITH ABOVE MIDDLEWARE
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build'));
+  res.sendFile(path.resolve(__dirname, '/build'));
 });
 
 app.listen(PORT, () => {
