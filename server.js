@@ -81,14 +81,14 @@ app.post('/register', async (req, res) => {
       });
     }
 
-    await User.create({
+    await User.create([{
       id,
       name,
       email,
       password: encryptedPassword,
       balance,
       transactionHistory: [],
-    });
+    }]);
     res.json.send({ status: 'User succesfully created!' });
   } catch (error) {
     res.send({ status: 'Error creating user.' });
