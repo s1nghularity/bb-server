@@ -208,10 +208,17 @@ app.put('/updateBalance/:id', findUserMiddleware, (req, res) => {
   );
 });
 
-
-
-
-
+//HANDLES UNPROTECTED DELETION OF ACCOUNT ON ALLDATA PAGE
+app.delete('/deleteuser/:id', (req, res) => {
+  const userId = req.params.id;
+  User.deleteOne({_id: userId})
+    .then(() => {
+      res.status(200).send('User deleted');
+    })
+    .catch(error => {
+      res.status(500).send(error);
+    });
+});
 
 
 //SERVES BADBANK REACT APP WITH ABOVE MIDDLEWARE
