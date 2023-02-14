@@ -126,7 +126,7 @@ app.post('/userData', async (req, res) => {
     const userEmail = user.email;
     User.findOne({ email: userEmail })
       .then((data) => {
-        res.json.send({ status: 'ok', data: data });
+        res.send({ status: 'ok', data: data });
       })
       .catch((error) => {
         res.send({ status: 'error', data: error });
@@ -191,6 +191,22 @@ app.put('/withdraw/:id', findUserMiddleware, (req, res) => {
   );
 });
 
+//HANDLES UPDATE OF COMPONENT WHEN USER BALANCE CHANGES
+app.put('/updateBalance/:id', findUserMiddleware, (req, res) => {
+  const newBalance = req.body.userData.balance;
+  User.findByIdAndUpdate(
+    req.params.id,
+    { balance: newBalance },
+    { new: true },
+    (err, user) => {
+      if (err) {
+        console.log(err);
+        return res.status(500).send(err);
+      }
+      return res.send(user);
+    }
+  );
+});
 
 
 
