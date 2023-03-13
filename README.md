@@ -21,10 +21,10 @@ POST
 
 - Function: Registers a new user with given id, name, email, password and balance. The password is encrypted with bcrypt package before storing it to the database. The function checks if the email is already registered. If not, it creates a new user and sends response with status 'User succesfully created!' and the created user object. If the email is already registered, it sends response with an error message.
 
-    Route: `app.post('/login')`
+        Route: `app.post('/login')`
 - Function: Authenticates user login, checks if the given email and password match with the database record, generates JSON Web Token (JWT) with user's email as payload, and sends it back to the client in the response body as the "data" field.
 
-    Route: `app.post('/userData')`
+        Route: `app.post('/userData')`
 
 - Function: Verifies a given JWT, retrieves the email from the payload, and fetches the user data from the database with the retrieved email. Sends response with status 'ok' and the user data if the JWT is valid, otherwise sends response with status 'error' and error message.
 
