@@ -55,6 +55,7 @@ Feel free to create an account and play around.
 https://bb-client-r4iq.onrender.com/
 
 Or check out this walkthrough▶️
+
 [![Video thumbnail](https://img.youtube.com/vi/Uqe_AY4UvJY/0.jpg)](https://www.youtube.com/watch?v=Uqe_AY4UvJY)
 
 ## Future Changes
