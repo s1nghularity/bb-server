@@ -51,9 +51,11 @@ MIDDLEWARE
 
 ## 🔗 Live Site
 
+Feel free to create an account and play around. 
 https://bb-client-r4iq.onrender.com/
 
-<iframe src="https://www.youtube.com/embed/Uqe_AY4UvJY" width="560" height="315" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Or check out this walkthrough▶️
+[![Video thumbnail](https://img.youtube.com/vi/Uqe_AY4UvJY/0.jpg)](https://www.youtube.com/watch?v=Uqe_AY4UvJY)
 
 ## Future Changes
 
