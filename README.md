@@ -1,6 +1,6 @@
 # 🏦 Bad Bank Capstone Project
 
-A full-stack MERN application which allows you to create a user, login and logout, deposit and withdraw money, and finally the ability to delete users as well. This mock site is intended to show a working REST APIs CRUD functionality.
+Bad Bank is a full-stack MERN application which allows users to create an account, login and logout, deposit and withdraw money, and delete their account. This mock site is intended to show working REST API CRUD functionality.
 
 ## 📚 API Documentation
 
@@ -8,7 +8,7 @@ GET
 
     Route: app.get('*')
     
--Function: Serves index.html file from build directory when any unmatched requests are made.
+- Function: Serves `index.html` file from build directory when any unmatched requests are made.
 
 PUT
 
