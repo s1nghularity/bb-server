@@ -134,9 +134,6 @@ app.post('/userData', async (req, res) => {
   } catch (error) {}
 });
 
-
-
-
 //HANDLES DEPOSIT UPDATE OF USER BALANCE
 app.put('/deposit/:id', findUserMiddleware, (req, res) => {
   console.log('User ID:', req.params.id);
@@ -220,7 +217,6 @@ app.delete('/deleteuser/:id', (req, res) => {
     });
 });
 
-
 //SERVES BADBANK REACT APP WITH ABOVE MIDDLEWARE
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'build'));
@@ -229,18 +225,3 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server successfully started on port ${PORT}`);
 });
-
-
-
-
-
-
-// // free endpoint
-// app.get("/free-endpoint", (req, res) => {
-//   res.json({ message: "You are free to access me anytime" });
-// });
-
-// // authentication endpoint
-// app.get("/auth-endpoint", (req, res) => {
-//   res.json({ message: "You are authorized to access me" });
-// });
